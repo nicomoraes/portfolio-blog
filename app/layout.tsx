@@ -1,7 +1,6 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import '@/styles/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+import {jetbrainsMono, roboto} from '@/lib/fonts'
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,8 +13,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="pt-BR" className={`${roboto.variable} ${jetbrainsMono.variable} font-sans`}>
+      <body>{children}</body>
     </html>
   )
 }

@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #010010;
+    --foreground: #FFFFFF;
+
+    --muted: #6A6A6A;
+    --muted-foreground:#010010;
+
+    --primary: #FFFFFF;
+    --primary-foreground: #010010;
+    
+    --secondary: #04BFBF;
+    --secondary-foreground: #FFFFFF;
+
+    --destructive: #F24405;
+    --destructive-foreground: #FFFFFF;
+
+    --border: #6A6A6A70;
+
+    --ring: #07F2DB;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
