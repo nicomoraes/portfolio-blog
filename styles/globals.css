@@ -10,11 +10,11 @@
     --muted: #6A6A6A;
     --muted-foreground:#010010;
 
-    --primary: #FFFFFF;
-    --primary-foreground: #010010;
+    --primary: #100f1e;
+    --primary-foreground: #FFFFFF;
     
-    --secondary: #04BFBF;
-    --secondary-foreground: #FFFFFF;
+    --secondary: #FFFFFF;
+    --secondary-foreground: #100f1e;
 
     --destructive: #F24405;
     --destructive-foreground: #FFFFFF;
