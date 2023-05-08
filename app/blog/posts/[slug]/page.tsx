@@ -23,15 +23,15 @@ export default async function Posts({ params }: PostProps) {
   const { body, title, excerpt, _createdAt } = post!;
 
   return (
-    <main className="z-10 min-h-[calc(100vh-70px)] w-full max-w-screen-sm overflow-hidden max-md:px-2 md:mx-auto">
+    <main className="min-h-[calc(100vh-70px)] w-full max-w-screen-sm overflow-hidden max-md:px-2 md:mx-auto">
       <PostHead {...{ title, excerpt, _createdAt }} />
       <hr className="my-4" />
-      <article>
+      <article className="mb-8">
         {body && (
           <Markdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw, rehypeHighlight]}
-            className="prose prose-invert  md:prose-lg prose-pre:bg-primary prose-pre:shadow-sm"
+            className="prose prose-invert  md:prose-lg prose-code:!bg-primary prose-pre:bg-primary prose-pre:shadow-sm"
           >
             {body}
           </Markdown>

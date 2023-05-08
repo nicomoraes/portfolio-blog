@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 import { NavLink } from "./components/NavLink";
 
-const routes = [
+export const routes = [
   { path: "/", label: "Página principal" },
   { path: "/blog", label: "Blog" },
 ];

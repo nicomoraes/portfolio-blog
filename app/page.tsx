@@ -10,7 +10,7 @@ export default async function Home() {
   const data = await getHomeData();
 
   return (
-    <main className="z-10 flex min-h-[calc(100vh-70px)] flex-col items-center justify-between">
+    <main className="flex min-h-[calc(100vh-70px)] flex-col items-center justify-between">
       <Hero />
       {/* Github repositories */}
       <section className="flex min-h-screen w-full max-w-screen-lg flex-col justify-center max-lg:mx-auto max-lg:px-2">

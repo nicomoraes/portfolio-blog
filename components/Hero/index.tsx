@@ -55,7 +55,7 @@ const Hero = () => (
       <IconContext.Provider
         value={{
           size: "40px",
-          className: "text-primary",
+          className: "text-foreground/10",
         }}
       >
         <SiReact />

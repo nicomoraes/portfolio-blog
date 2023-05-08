@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const blurBackgroundVariants = cva("absolute h-44 w-44 blur-[150px]", {
+const blurBackgroundVariants = cva("absolute h-44 w-44 -z-50 blur-[150px]", {
   variants: {
     variant: {
       blue: "bg-secondary",

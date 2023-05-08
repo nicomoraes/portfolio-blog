@@ -1,5 +1,5 @@
 import "@/styles/globals.css";
-import { BlurredBackground, Header } from "@/components";
+import { BlurredBackground, Footer, Header } from "@/components";
 
 import { jetbrainsMono, roboto } from "@/lib/fonts";
 
@@ -19,7 +19,6 @@ export default function RootLayout({
       className={`${roboto.variable} ${jetbrainsMono.variable} font-sans`}
     >
       <body>
-        <Header />
         <BlurredBackground
           variant={"blue"}
           position={{
@@ -34,7 +33,9 @@ export default function RootLayout({
             left: "10%",
           }}
         />
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );
