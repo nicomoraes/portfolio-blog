@@ -4,32 +4,45 @@
 
 @layer base {
   :root {
-    --background: #010010;
-    --foreground: #FFFFFF;
+    --c: #555555;
+    --cplusplus: #f34b7d;
+    --csharp: #178600;
+    --css: #563d7c;
+    --html: #e34c26;
+    --java: #b07219;
+    --javascript: #f1e05a;
+    --php: #4F5D95;
+    --python: #3572A5;
+    --ruby: #701516;
+    --typescript: #2b7489;
+  }
+}
 
-    --muted: #6A6A6A;
-    --muted-foreground:#010010;
-
-    --primary: #100f1e;
-    --primary-foreground: #FFFFFF;
-    
-    --secondary: #FFFFFF;
-    --secondary-foreground: #100f1e;
-
-    --destructive: #F24405;
-    --destructive-foreground: #FFFFFF;
-
-    --border: #6A6A6A70;
-
-    --ring: #07F2DB;
+@layer base {
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
 @layer base {
   * {
-    @apply border-border;
+    scrollbar-width: thin;
+    scrollbar-color: #100f1e;
   }
-  body {
-    @apply bg-background text-foreground;
+  
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: max-content;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: #100f1e;
+    border-radius: 5px;
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: #FFFFFF;
+    border-radius: 14px;
+    border: 3px solid #100f1e;
   }
 }

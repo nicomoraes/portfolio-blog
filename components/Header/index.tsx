@@ -1,19 +1,23 @@
 "use client";
 
-import { useState } from "react";
-import {usePathname} from 'next/navigation'
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 import { NavLink } from "./components/NavLink";
 
 const routes = [
   { path: "/", label: "Página principal" },
   { path: "/blog", label: "Blog" },
-  { path: "/contact", label: "Contato" },
 ];
 
 export const Header = () => {
-  const pathname = usePathname()
+  const pathname = usePathname();
   const routeState = useState(pathname);
+
+  useEffect(() => {
+    const [_, setRouteState] = routeState;
+    setRouteState("/" + pathname.split("/")[1]);
+  }, [pathname, routeState]);
 
   return (
     <header className="flex w-full justify-center py-4">

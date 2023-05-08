@@ -9,28 +9,17 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'secondary': '0px 0px 20px -2px #04BFBF',
+        'tertiary': '0px 0px 20px -2px #F24405',
+      },
       colors: {
-        border: "var(--border)",
-        input: "var(--input)",
-        ring: "var(--ring)",
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        primary: {
-          DEFAULT: "var(--primary)",
-          foreground: "var(--primary-foreground)",
-        },
-        secondary: {
-          DEFAULT: "var(--secondary)",
-          foreground: "var(--secondary-foreground)",
-        },
-        destructive: {
-          DEFAULT: "var(--destructive)",
-          foreground: "var(--destructive-foreground)",
-        },
-        muted: {
-          DEFAULT: "var(--muted)",
-          foreground: "var(--muted-foreground)",
-        },
+       'background': '#010010',
+       'foreground': '#FFFFFF',
+       'primary': '#100f1e',
+       'primary-border': '#282734',
+       'secondary': '#04BFBF',
+       'tertiary': '#F24405',
       },
       fontFamily: {
         sans: ['var(--font-roboto)', ...fontFamily.sans],
@@ -38,5 +27,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
 }
