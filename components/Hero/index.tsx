@@ -18,7 +18,7 @@ import {
 import { DeveloperVariants, NameChevronVariants } from "./animation";
 
 const Hero = () => (
-  <section className="mx-auto flex min-h-[calc(100vh-70px)] w-max cursor-default flex-col justify-center">
+  <>
     <h2 className="flex items-center gap-x-3 font-sans text-4xl">
       <motion.span
         initial={"initial"}
@@ -29,7 +29,7 @@ const Hero = () => (
           repeat: Infinity,
           repeatType: "reverse",
         }}
-      >
+        >
         <BsChevronRight size={25} />
       </motion.span>
       <span className="font-mono font-bold">Nicolas Moraes</span>
@@ -47,7 +47,7 @@ const Hero = () => (
           repeatDelay: 5,
         }}
         className="font-mono font-extrabold text-tertiary"
-      >
+        >
         Developer{" "}
       </motion.span>
     </h1>
@@ -57,7 +57,7 @@ const Hero = () => (
           size: "40px",
           className: "text-foreground/10",
         }}
-      >
+        >
         <SiReact />
         <SiNextdotjs />
         <SiTypescript />
@@ -80,7 +80,7 @@ const Hero = () => (
         </Button>
       </a>
     </div>
-  </section>
+  </>
 );
 
 export default Hero;

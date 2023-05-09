@@ -19,7 +19,10 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-[calc(100vh-70px)] flex-col items-center justify-between">
-      <Hero />
+      <section className="mx-auto flex min-h-[calc(100vh-70px)] w-max cursor-default flex-col justify-center">
+        <Hero />
+      </section>
+
       {/* Github repositories */}
       <section className="flex min-h-screen w-full max-w-screen-lg flex-col justify-center max-lg:mx-auto max-lg:px-2">
         <h2 className="mb-4 inline-flex items-center gap-x-2 font-mono text-3xl">
