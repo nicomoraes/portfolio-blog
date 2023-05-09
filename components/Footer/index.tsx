@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = () => {
         <div className="flex flex-col gap-y-2">
           <h1 className="mb-2 text-base font-bold">Páginas</h1>
           {routes.map((route) => (
-            <NavLink {...route} />
+            <NavLink key={`key-footer-link-${route.path}`} {...route} />
           ))}
         </div>
         <div className="flex flex-col gap-y-2">

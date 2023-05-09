@@ -64,8 +64,10 @@ export const getHomeData = async () => {
             .then(async (rep_data) => {
               const { id, description, name, languages_url, svn_url } =
                 rep_data as GithubAPIRepositoryResponse;
+
               const languages: RepositoryLanguage =
                 await getRepositoryLanguages(languages_url);
+
               return {
                 id,
                 description,

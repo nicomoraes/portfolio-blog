@@ -2,6 +2,10 @@ import { PostArticle } from "@/components";
 
 import { getBlogData } from "@/lib/datocms/blog-query";
 
+//page config
+export const fetchCache = "force-cache";
+export const revalidate = 43200; //12h
+
 export default async function Blog() {
   const posts = await getBlogData();
   return (

@@ -9,7 +9,7 @@ import { getPostData, getPostSlug } from "@/lib/datocms/post-query";
 
 //page config
 export const fetchCache = "force-cache";
-export const revalidate = 43600;
+export const revalidate = 43200; //12h
 
 interface PostProps {
   params: { slug: string };
