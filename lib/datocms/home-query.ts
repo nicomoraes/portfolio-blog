@@ -16,7 +16,7 @@ interface CMSData {
 }
 
 const QUERY = `query HomePage {
-  allRepositories(filter: {show: {eq: "true"}}) {
+  allRepositories(filter: {show: {eq: "true"}}, orderBy: name_ASC) {
     id
     name
   }

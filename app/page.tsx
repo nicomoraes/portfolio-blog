@@ -1,3 +1,4 @@
+import Image from "next/image";
 import {
   ContactForm,
   FormToastContextProvider,
@@ -9,6 +10,7 @@ import { BsNewspaper } from "react-icons/bs";
 import { SiGithub } from "react-icons/si";
 
 import { getHomeData } from "@/lib/datocms/home-query";
+import MotionText from "@/components/MotionText";
 
 //page config
 export const fetchCache = "force-cache";
@@ -42,13 +44,26 @@ export default async function Home() {
       <section className="mx-auto flex min-h-screen w-full max-w-screen-lg flex-col justify-center max-lg:px-4">
         <h2 className="mb-4 inline-flex items-center gap-x-2 font-mono text-3xl">
           <BsNewspaper size={40} />
-          Blog
+          Blog (Em breve)
         </h2>
-        <div className="mx-auto grid h-full w-full grid-cols-1 gap-4 sm:grid-cols-2">
-          {data?.posts.map((post) => (
-            <PostArticle key={`key-post-${post.id}`} {...post} />
-          ))}
-        </div>
+        {data?.posts?.length! < 1 ? (
+          <div className="mx-auto flex w-full flex-col items-center rounded-xl bg-primary p-4 hover:shadow-lg hover:shadow-foreground/50 duration-300">
+            <Image
+              src="/work-on-it.png"
+              width={384}
+              height={384}
+              alt="Under contruction"
+              className="object-contain"
+            />
+            <MotionText text="Trabalhando nisso..."/>
+          </div>
+        ) : (
+          <div className="mx-auto grid h-full w-full grid-cols-1 gap-4 sm:grid-cols-2">
+            {data?.posts.map((post) => (
+              <PostArticle key={`key-post-${post.id}`} {...post} />
+            ))}
+          </div>
+        )}
       </section>
 
       {/* Contact area */}
