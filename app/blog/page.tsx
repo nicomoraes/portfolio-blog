@@ -27,6 +27,7 @@ export default async function Blog() {
                 height={384}
                 alt="Under contruction"
                 className="object-contain"
+                priority={true}
               />
             </div>
             <a
@@ -54,3 +55,8 @@ export default async function Blog() {
     </main>
   );
 }
+
+export const metadata = {
+  title: "Blog - Nicolas Moraes",
+  description: "Dicas de programação, tendências e novidades em tecnologia web.",
+};

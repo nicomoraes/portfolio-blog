@@ -10,7 +10,7 @@ const MotionText = ({text}: {text: string}) => {
       {text.split("").map((word, index) => (
         <motion.span
           style={{ marginRight: word === " " ? 4 : 1 }}
-          key={`motion-text-${text}-${word}`}
+          key={`motion-text-${index}-${word}`}
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}

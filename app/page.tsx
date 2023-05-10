@@ -54,6 +54,7 @@ export default async function Home() {
               height={384}
               alt="Under contruction"
               className="object-contain"
+              priority={true}
             />
             <MotionText text="Trabalhando nisso..."/>
           </div>
@@ -81,3 +82,8 @@ export default async function Home() {
     </main>
   );
 }
+
+export const metadata = {
+  title: "Nicolas Moraes - Desenvolvedor Front-end: Portfólio e Blog",
+  description: "Descubra o portfólio e blog de Nicolas, um desenvolvedor front-end apaixonado por tecnologia, design de sites e aplicativos web.",
+};
