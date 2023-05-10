@@ -47,7 +47,7 @@ export default async function Home() {
           Blog (Em breve)
         </h2>
         {data?.posts?.length! < 1 ? (
-          <div className="mx-auto flex w-full flex-col items-center rounded-xl bg-primary p-4 hover:shadow-lg hover:shadow-foreground/50 duration-300">
+          <div className="mx-auto flex w-full flex-col items-center rounded-xl bg-primary p-4 duration-300 hover:shadow-lg hover:shadow-foreground/50">
             <Image
               src="/work-on-it.png"
               width={384}
@@ -56,7 +56,14 @@ export default async function Home() {
               className="object-contain"
               priority={true}
             />
-            <MotionText text="Trabalhando nisso..."/>
+            <a
+              href="https://storyset.com/online"
+              target="_blank"
+              className="text-center text-xs text-foreground/10"
+            >
+              Online illustrations by Storyset
+            </a>
+            <MotionText text="Trabalhando nisso..." />
           </div>
         ) : (
           <div className="mx-auto grid h-full w-full grid-cols-1 gap-4 sm:grid-cols-2">
@@ -85,5 +92,6 @@ export default async function Home() {
 
 export const metadata = {
   title: "Nicolas Moraes - Desenvolvedor Front-end: Portfólio e Blog",
-  description: "Descubra o portfólio e blog de Nicolas, um desenvolvedor front-end apaixonado por tecnologia, design de sites e aplicativos web.",
+  description:
+    "Descubra o portfólio e blog de Nicolas, um desenvolvedor front-end apaixonado por tecnologia, design de sites e aplicativos web.",
 };

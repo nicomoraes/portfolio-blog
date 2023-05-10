@@ -11,12 +11,13 @@ export const revalidate = 43200; //12h
 
 export default async function Blog() {
   const posts = await getBlogData();
+  
   return (
     <main className="min-h-[calc(100vh-70px)]">
       <div className="flex w-full max-w-screen-md flex-col gap-y-8 max-md:px-4 md:mx-auto">
         {posts!.length < 1 ? (
           <div className="mx-auto flex min-h-screen w-full  flex-col items-center justify-center">
-            <h1 className="text-5xl text-tertiary">Em contrução</h1>
+            <h1 className="text-5xl text-tertiary">Em construção</h1>
             <p className="text-foreground/50">
               Em breve novas postagens serão publicadas
             </p>
@@ -32,6 +33,7 @@ export default async function Blog() {
             </div>
             <a
               href="https://storyset.com/online"
+              target="_blank"
               className="text-center text-xs text-foreground/30"
             >
               Online illustrations by Storyset
@@ -58,5 +60,6 @@ export default async function Blog() {
 
 export const metadata = {
   title: "Blog - Nicolas Moraes",
-  description: "Dicas de programação, tendências e novidades em tecnologia web.",
+  description:
+    "Dicas de programação, tendências e novidades em tecnologia web.",
 };

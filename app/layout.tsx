@@ -1,7 +1,18 @@
 import "@/styles/globals.css";
+import { Metadata } from "next";
 import { BlurredBackground, Footer, Header } from "@/components";
 
 import { jetbrainsMono, roboto } from "@/lib/fonts";
+
+export const metadata: Metadata = {
+  icons: {
+    icon: "./favicon.ico",
+    other: {
+      rel: "apple-touch-icon",
+      url: "/apple-touch-icon.png",
+    },
+  },
+};
 
 export default function RootLayout({
   children,
