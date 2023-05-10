@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata } from "next";
 import { BlurredBackground, Footer, Header } from "@/components";
+import { Analytics } from "@vercel/analytics/react";
 
 import { jetbrainsMono, roboto } from "@/lib/fonts";
 
@@ -41,6 +42,7 @@ export default function RootLayout({
         />
         <Header />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
