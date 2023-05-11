@@ -29,7 +29,7 @@ const Hero = () => (
           repeat: Infinity,
           repeatType: "reverse",
         }}
-        >
+      >
         <BsChevronRight size={25} />
       </motion.span>
       <span className="font-mono font-bold">Nicolas Moraes</span>
@@ -47,7 +47,7 @@ const Hero = () => (
           repeatDelay: 5,
         }}
         className="font-mono font-extrabold text-tertiary"
-        >
+      >
         Developer{" "}
       </motion.span>
     </h1>
@@ -57,7 +57,7 @@ const Hero = () => (
           size: "40px",
           className: "text-foreground/10",
         }}
-        >
+      >
         <SiReact />
         <SiNextdotjs />
         <SiTypescript />
@@ -68,13 +68,13 @@ const Hero = () => (
     </div>
     <div className="mt-10 flex justify-center gap-x-4">
       <a href="https://github.com/nicomoraes" target="_blank">
-        <Button>
+        <Button aria-label="Ver perfil no Github" role="link">
           <SiGithub />
           Github
         </Button>
       </a>
       <a href="https://www.linkedin.com/in/nicolasmoraes-ti/" target="_blank">
-        <Button>
+        <Button aria-label="Ver perfil no LinkedIn" role="link">
           <SiLinkedin />
           LinkedIn
         </Button>

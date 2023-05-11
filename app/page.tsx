@@ -1,4 +1,3 @@
-import Image from "next/image";
 import {
   ContactForm,
   FormToastContextProvider,
@@ -8,8 +7,10 @@ import {
 } from "@/components";
 import { BsNewspaper } from "react-icons/bs";
 import { SiGithub } from "react-icons/si";
+import { match } from "ts-pattern";
 
 import { getHomeData } from "@/lib/datocms/home-query";
+import { IllustrationImage } from "@/components/IllustrationImage";
 import MotionText from "@/components/MotionText";
 
 //page config
@@ -18,7 +19,7 @@ export const revalidate = 43200;
 
 export default async function Home() {
   const data = await getHomeData();
-
+  
   return (
     <main className="flex min-h-[calc(100vh-70px)] flex-col items-center justify-between">
       <section className="mx-auto flex min-h-[calc(100vh-70px)] w-max cursor-default flex-col justify-center">
@@ -46,32 +47,25 @@ export default async function Home() {
           <BsNewspaper size={40} />
           Blog (Em breve)
         </h2>
-        {data?.posts?.length! < 1 ? (
-          <div className="mx-auto flex w-full flex-col items-center rounded-xl bg-primary p-4 duration-300 hover:shadow-lg hover:shadow-foreground/50">
-            <Image
-              src="/work-on-it.png"
-              width={384}
-              height={384}
-              alt="Under contruction"
-              className="object-contain"
-              priority={true}
-            />
-            <a
-              href="https://storyset.com/online"
-              target="_blank"
-              className="text-center text-xs text-foreground/10"
-            >
-              Online illustrations by Storyset
-            </a>
-            <MotionText text="Trabalhando nisso..." />
-          </div>
-        ) : (
-          <div className="mx-auto grid h-full w-full grid-cols-1 gap-4 sm:grid-cols-2">
-            {data?.posts.map((post) => (
-              <PostArticle key={`key-post-${post.id}`} {...post} />
-            ))}
-          </div>
-        )}
+        {match({ isEmpty: data?.posts?.length! < 1 })
+          .with({ isEmpty: true }, () => (
+            <div className="mx-auto flex w-full flex-col items-center rounded-xl bg-primary p-4 duration-300 hover:shadow-lg hover:shadow-foreground/50">
+              <IllustrationImage
+                imagePath="/work-on-it.png"
+                alt="Em construção"
+                size="md"
+              />
+              <MotionText text="Trabalhando nisso..." />
+            </div>
+          ))
+          .with({ isEmpty: false }, () => (
+            <div className="mx-auto grid h-full w-full grid-cols-1 gap-4 sm:grid-cols-2">
+              {data?.posts.map((post) => (
+                <PostArticle key={`key-post-${post.id}`} {...post} />
+              ))}
+            </div>
+          ))
+          .exhaustive()}
       </section>
 
       {/* Contact area */}
@@ -91,7 +85,7 @@ export default async function Home() {
 }
 
 export const metadata = {
-  title: "Nicolas Moraes - Desenvolvedor Front-end: Portfólio e Blog",
+  title: "Nicolas Moraes - Desenvolvedor Front-end",
   description:
     "Descubra o portfólio e blog de Nicolas, um desenvolvedor front-end apaixonado por tecnologia, design de sites e aplicativos web.",
 };

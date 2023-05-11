@@ -1,12 +1,12 @@
-export interface Repository {
+export interface AppRepository {
   id: number;
   name: string;
   description: string;
   url: string;
-  languages: RepositoryLanguage[];
+  languages: AppRepositoryLanguage[];
 }
 
-export type RepositoryLanguage = {
+export type AppRepositoryLanguage = {
   name: string;
   percentage: number;
 }

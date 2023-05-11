@@ -38,7 +38,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ config }) => {
     handleSubmit,
     register,
     reset,
-    formState: { errors },
+    formState: { errors, isLoading },
   } = useForm<FormProps>({
     mode: "onBlur",
     resolver: zodResolver(schema),
@@ -110,10 +110,16 @@ export const ContactForm: React.FC<ContactFormProps> = ({ config }) => {
           />
         </fieldset>
         <div className="flex w-full justify-center gap-x-6">
-          <Button type="submit" disabled={!!loading}>
-            {loading ? <ImSpinner2 className="animate-spin" /> : "Enviar"}
+          <Button aria-label="Enviar formulário" disabled={isLoading} role="button">
+            {isLoading ? <ImSpinner2 className="animate-spin" /> : "Enviar"}
           </Button>
-          <Button type="reset" variant="destructive" onClick={() => reset()}>
+          <Button
+            aria-label="Redefinir os campos do formulário"
+            onClick={() => reset()}
+            role="button"
+            type="reset"
+            variant="destructive"
+          >
             Reset
           </Button>
         </div>

@@ -22,7 +22,13 @@ export const Footer: React.FC<FooterProps> = () => {
         <div className="flex flex-col gap-y-2">
           <h1 className="mb-2 text-base font-bold">Redes Sociais</h1>
           <a href={"https://github.com/nicomoraes"} target="_blank">
-            <Button variant={"text"} size={"text"} className="text-medium">
+            <Button
+              aria-label="Ver perfil no Github"
+              className="text-medium"
+              size={"text"}
+              role="link"
+              variant={"text"}
+            >
               <SiGithub />
               GitHub
             </Button>
@@ -31,7 +37,13 @@ export const Footer: React.FC<FooterProps> = () => {
             href={"https://www.linkedin.com/in/nicolasmoraes-ti"}
             target="_blank"
           >
-            <Button variant={"text"} size={"text"} className="font-medium">
+            <Button
+              aria-label="Ver perfil no LinkedIn"
+              className="font-medium"
+              size={"text"}
+              role="link"
+              variant={"text"}
+            >
               <SiLinkedin />
               LinkedIn
             </Button>

@@ -1,14 +1,14 @@
 import { Post } from "@/types/post";
 import {
   GithubAPIRepositoryResponse,
-  Repository,
-  RepositoryLanguage,
+  AppRepository,
+  AppRepositoryLanguage,
 } from "@/types/repository";
 
 import { formatDate } from "../utils";
 import { request } from "./index";
 
-type AllRepositories = Pick<Repository, "id" | "name">;
+type AllRepositories = Pick<AppRepository, "id" | "name">;
 
 interface CMSData {
   allRepositories: AllRepositories[];
@@ -65,7 +65,7 @@ export const getHomeData = async () => {
               const { id, description, name, languages_url, svn_url } =
                 rep_data as GithubAPIRepositoryResponse;
 
-              const languages: RepositoryLanguage =
+              const languages: AppRepositoryLanguage =
                 await getRepositoryLanguages(languages_url);
 
               return {
@@ -74,7 +74,7 @@ export const getHomeData = async () => {
                 name,
                 url: svn_url,
                 languages,
-              } as unknown as Repository;
+              } as unknown as AppRepository;
             })
       )
     );
@@ -102,6 +102,6 @@ const getRepositoryLanguages = async (languages_url: string) => {
         };
       });
 
-      return languages as unknown as RepositoryLanguage;
+      return languages as unknown as AppRepositoryLanguage;
     });
 };

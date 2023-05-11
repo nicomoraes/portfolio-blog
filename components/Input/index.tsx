@@ -1,5 +1,6 @@
-import { AnimatePresence, motion } from "framer-motion";
 import { forwardRef, type HTMLAttributes, type LegacyRef } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 import { ErrorPhraseVariants } from "./animation";
 
 interface InputProps extends HTMLAttributes<HTMLInputElement> {
@@ -16,13 +17,24 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           {label}
         </label>
         <input
-          className="form-input rounded-md bg-primary my-2 px-4 py-3 ring-1 focus:border-secondary"
+          className="form-input my-2 rounded-md bg-primary px-4 py-3 ring-1 focus:border-secondary"
           name={name}
           ref={ref}
           {...rest}
         />
         <AnimatePresence mode="wait">
-          {error && <motion.p initial={'initial'} animate={'animate'} exit={'exit'} transition={{duration: 0.6}} variants={ErrorPhraseVariants} className="w-full text-sm text-tertiary h-max">{error}</motion.p>}
+          {error && (
+            <motion.p
+              initial={"initial"}
+              animate={"animate"}
+              exit={"exit"}
+              transition={{ duration: 0.6 }}
+              variants={ErrorPhraseVariants}
+              className="h-max w-full text-sm text-tertiary"
+            >
+              {error}
+            </motion.p>
+          )}
         </AnimatePresence>
       </div>
     );

@@ -20,10 +20,12 @@ export const PostHead: React.FC<PostHeadProps> = ({
   return (
     <div className="mb-8 flex flex-col gap-y-4 max-md:mx-3 max-md:items-center">
       <Button
-        variant={"text"}
-        size={"text"}
+        aria-label="Voltar para a página anterior"
         className="self-start"
         onClick={() => router.back()}
+        role="navigation"
+        size={"text"}
+        variant={"text"}
       >
         <BsArrowLeft /> Voltar
       </Button>
