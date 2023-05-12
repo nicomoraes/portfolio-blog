@@ -54,10 +54,17 @@ export const metadata = {
   title: "Blog",
   description:
     "Dicas de programação, tendências e novidades do ecossistema React/Next.js.",
+  category: 'Blog',
   openGraph: {
-    title: "Blog - Nicolas Morase",
+    title: "Blog",
     description:
-      "Dicas de programação, tendências e novidades do ecossistema React/Next.js.",
-    url: `https://nicolasmoraes.com/blog`,
+    "Dicas de programação, tendências e novidades do ecossistema React/Next.js.",
+    url: "https://nicolasmoraes.com/blog",
+    images: [
+      { width: 800, height: 600, url: "https://nicolasmoraes.com/og.png" },
+    ],
+    siteName: "Blog & Portfólio | Nicolas Moraes",
+    locale: "pt-BR",
+    type: "website",
   },
 };

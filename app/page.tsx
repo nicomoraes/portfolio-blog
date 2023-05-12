@@ -88,4 +88,17 @@ export const metadata = {
   title: "Página Inicial",
   description:
     "Descubra o portfólio e blog de Nicolas, um desenvolvedor front-end apaixonado por tecnologia, design de sites e aplicativos web.",
+  category: 'Homepage',
+  openGraph: {
+    title: "Página Inicial",
+    description:
+    "Descubra o portfólio e blog de Nicolas, um desenvolvedor front-end apaixonado por tecnologia, design de sites e aplicativos web.",
+    url: "https://nicolasmoraes.com",
+    images: [
+      { width: 800, height: 600, url: "https://nicolasmoraes.com/og.png" },
+    ],
+    siteName: "Blog & Portfólio | Nicolas Moraes",
+    locale: "pt-BR",
+    type: "website",
+  },
 };

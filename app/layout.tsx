@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "./favicon.ico",
+    apple: '/apple-touch-icon.png'
   },
   category: "technology",
   creator: "Nicolas Moraes",
@@ -24,11 +25,6 @@ export const metadata: Metadata = {
     "Portfolio",
     "React",
   ],
-  openGraph: {
-    siteName: "Blog & Portfólio | Nicolas Moraes",
-    locale: "pt-BR",
-    type: "website",
-  },
   publisher: "Vercel",
 };
 

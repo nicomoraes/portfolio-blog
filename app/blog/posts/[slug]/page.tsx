@@ -63,18 +63,30 @@ export async function generateMetadata({
 
   const { title, excerpt, topics } = post!;
 
-  const keywords = topics.map((topic) => topic.name);
+  const keywords = [
+    ...topics.map((topic) => topic.name),
+    "Blog",
+    "Nicolas Moraes",
+    "Nicolas",
+    "Moraes",
+  ];
 
   return {
     title: title,
     description: excerpt,
     keywords,
     authors: [{ name: "Nicolas Moraes" }],
-    category: "post",
+    category: "Article",
     openGraph: {
       title,
       description: excerpt,
       url: `https://nicolasmoraes.com/blog/${slug}`,
+      images: [
+        { width: 800, height: 600, url: "https://nicolasmoraes.com/og.png" },
+      ],
+      siteName: "Blog & Portfólio | Nicolas Moraes",
+      locale: "pt-BR",
+      type: "website",
     },
   };
 }
