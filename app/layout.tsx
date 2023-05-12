@@ -6,13 +6,30 @@ import { Analytics } from "@vercel/analytics/react";
 import { jetbrainsMono, roboto } from "@/lib/fonts";
 
 export const metadata: Metadata = {
+  title: {
+    default: "Nicolas Moraes - Desenvolvedor Front-end",
+    template: "%s | Nicolas Moraes",
+  },
   icons: {
     icon: "./favicon.ico",
-    other: {
-      rel: "apple-touch-icon",
-      url: "/apple-touch-icon.png",
-    },
   },
+  category: "technology",
+  creator: "Nicolas Moraes",
+  keywords: [
+    "Blog",
+    "Front-end",
+    "Moraes",
+    "Next.js",
+    "Nicolas",
+    "Portfolio",
+    "React",
+  ],
+  openGraph: {
+    siteName: "Blog & Portfólio | Nicolas Moraes",
+    locale: "pt-BR",
+    type: "website",
+  },
+  publisher: "Vercel",
 };
 
 export default function RootLayout({

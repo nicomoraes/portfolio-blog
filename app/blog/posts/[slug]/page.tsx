@@ -1,11 +1,16 @@
 import "highlight.js/styles/github-dark.css";
+import { Metadata } from "next";
 import { PostHead } from "@/components";
 import Markdown from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 
-import { getPostData, getPostSlug } from "@/lib/datocms/post-query";
+import {
+  getPostData,
+  getPostMetadata,
+  getPostSlug,
+} from "@/lib/datocms/post-query";
 
 //page config
 export const fetchCache = "force-cache";
@@ -47,4 +52,29 @@ export async function generateStaticParams() {
   return posts!.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: PostProps): Promise<Metadata> {
+  const slug = params.slug;
+
+  const post = await getPostMetadata(slug);
+
+  const { title, excerpt, topics } = post!;
+
+  const keywords = topics.map((topic) => topic.name);
+
+  return {
+    title: title,
+    description: excerpt,
+    keywords,
+    authors: [{ name: "Nicolas Moraes" }],
+    category: "post",
+    openGraph: {
+      title,
+      description: excerpt,
+      url: `https://nicolasmoraes.com/blog/${slug}`,
+    },
+  };
 }

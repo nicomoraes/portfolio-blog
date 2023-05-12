@@ -19,7 +19,7 @@ export const revalidate = 43200;
 
 export default async function Home() {
   const data = await getHomeData();
-  
+
   return (
     <main className="flex min-h-[calc(100vh-70px)] flex-col items-center justify-between">
       <section className="mx-auto flex min-h-[calc(100vh-70px)] w-max cursor-default flex-col justify-center">
@@ -85,7 +85,7 @@ export default async function Home() {
 }
 
 export const metadata = {
-  title: "Nicolas Moraes - Desenvolvedor Front-end",
+  title: "Página Inicial",
   description:
     "Descubra o portfólio e blog de Nicolas, um desenvolvedor front-end apaixonado por tecnologia, design de sites e aplicativos web.",
 };

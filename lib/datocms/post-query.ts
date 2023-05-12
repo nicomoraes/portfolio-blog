@@ -11,7 +11,6 @@ const POST_QUERY = `query Post_Query($slug: String) {
   post(filter: {slug: {eq: $slug}, published: {eq: "true"}}) {
     id
     title
-    slug
     excerpt
     body(markdown: false)
     _createdAt
@@ -30,6 +29,40 @@ export const getPostData = async (slug: string) => {
     console.log(error);
   }
 };
+
+
+// --------------------------------------------------------------
+
+
+interface PostMetadataCMSData {
+  post: Pick<Post, 'title' | 'slug' | 'excerpt' | 'topics'>;
+}
+
+const POST_METADATA_QUERY = `query Post_Query($slug: String) {
+  post(filter: {slug: {eq: $slug}, published: {eq: "true"}}) {
+    title
+    excerpt
+    topics{
+      name
+    }
+  }
+}`;
+
+export const getPostMetadata = async (slug: string) => {
+  try {
+    const data = await request<PostMetadataCMSData>({
+      query: POST_METADATA_QUERY,
+      variables: { slug: slug },
+    });
+    return data.post;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+// --------------------------------------------------------------
+
 
 type Slug = {
   slug: Pick<Post, "slug">;

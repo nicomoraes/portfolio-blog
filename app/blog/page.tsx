@@ -51,7 +51,13 @@ export default async function Blog() {
 }
 
 export const metadata = {
-  title: "Blog - Nicolas Moraes",
+  title: "Blog",
   description:
-    "Dicas de programação, tendências e novidades em tecnologia web.",
+    "Dicas de programação, tendências e novidades do ecossistema React/Next.js.",
+  openGraph: {
+    title: "Blog - Nicolas Morase",
+    description:
+      "Dicas de programação, tendências e novidades do ecossistema React/Next.js.",
+    url: `https://nicolasmoraes.com/blog`,
+  },
 };
