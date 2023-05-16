@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     "Portfolio",
     "React",
   ],
+  metadataBase: new URL('https://www.nicolasmoraes.com'),
   publisher: "Vercel",
 };
 
