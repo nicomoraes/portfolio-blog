@@ -7,7 +7,6 @@ import { getBlogData } from "@/lib/datocms/blog-query";
 import { IllustrationImage } from "@/components/IllustrationImage";
 
 //page config
-export const fetchCache = "force-cache";
 export const revalidate = 43200; //12h
 
 export default async function Blog() {

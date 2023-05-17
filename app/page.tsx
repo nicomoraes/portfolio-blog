@@ -14,7 +14,6 @@ import { IllustrationImage } from "@/components/IllustrationImage";
 import MotionText from "@/components/MotionText";
 
 //page config
-export const fetchCache = "force-cache";
 export const revalidate = 43200;
 
 export default async function Home() {

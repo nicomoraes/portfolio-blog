@@ -13,7 +13,6 @@ import {
 } from "@/lib/datocms/post-query";
 
 //page config
-export const fetchCache = "force-cache";
 export const revalidate = 43200; //12h
 
 interface PostProps {
