@@ -62,7 +62,7 @@ export const getHomeData = async () => {
           await promise
             .then((r) => r.json())
             .then(async (rep_data) => {
-              const { id, description, name, languages_url, svn_url } =
+              const { id, description, name, languages_url, svn_url, created_at } =
                 rep_data as GithubAPIRepositoryResponse;
 
               const languages: AppRepositoryLanguage =
@@ -74,6 +74,7 @@ export const getHomeData = async () => {
                 name,
                 url: svn_url,
                 languages,
+                created_at //added
               } as unknown as AppRepository;
             })
       )

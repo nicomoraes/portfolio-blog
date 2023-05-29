@@ -1,9 +1,12 @@
+import './styles.css'
 import { BiLinkExternal } from "react-icons/bi";
 
 import { AppRepository } from "@/types/repository";
 
 import { Button } from "../Button";
 import { RepositoryLanguage } from "./components/RepositoryLanguage";
+import { twMerge } from "tailwind-merge";
+import { isNewRepository } from "@/lib/utils";
 
 export const GithubRepository: React.FC<AppRepository> = ({
   description,
@@ -11,9 +14,13 @@ export const GithubRepository: React.FC<AppRepository> = ({
   languages,
   name,
   url,
+  created_at
 }) => {
   return (
-    <div className="flex w-full flex-col gap-y-4 rounded-lg border-2 border-primary-border bg-primary p-4 py-2 md:w-1/3">
+    <div className={
+      twMerge("flex w-full flex-col gap-y-4 rounded-lg border-2 bg-primary p-4 py-2 md:w-1/3",
+      isNewRepository(created_at) ? 'new-repository'  : 'border-primary-border'
+    )}>
       <div className="flex flex-col">
         <h3 className="text-foreground/50">Nome</h3>
         <h4 className="font-mono">{name}</h4>

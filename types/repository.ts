@@ -4,6 +4,7 @@ export interface AppRepository {
   description: string;
   url: string;
   languages: AppRepositoryLanguage[];
+  created_at: string;
 }
 
 export type AppRepositoryLanguage = {
@@ -17,4 +18,5 @@ export interface GithubAPIRepositoryResponse {
   description: string;
   svn_url: string;
   languages_url: string;
+  created_at: string;
 }

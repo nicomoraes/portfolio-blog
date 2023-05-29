@@ -30,7 +30,7 @@ export default async function Home() {
         <h2 className="mb-4 inline-flex items-center gap-x-2 font-mono text-3xl">
           <SiGithub size={40} /> GitHub
         </h2>
-        <div className="flex gap-4 max-md:flex-col">
+        <div className="flex gap-x-4 gap-y-8 max-md:flex-col">
           {data!.repositories.map((repository) => (
             <GithubRepository
               key={`key-git-repository-${repository.id}`}

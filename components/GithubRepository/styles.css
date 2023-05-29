@@ -1,0 +1,7 @@
+.new-repository {
+  @apply relative border-secondary;
+}
+
+.new-repository:before {
+  @apply absolute right-4 -top-[20px] w-max h-10 bg-secondary flex justify-center items-center rounded-full content-["Novo"] z-20 px-4 font-bold text-background;
+}
