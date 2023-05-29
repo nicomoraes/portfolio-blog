@@ -70,7 +70,7 @@ const Hero = () => (
       <a href="https://github.com/nicomoraes" target="_blank">
         <Button aria-label="Ver perfil no Github" role="link">
           <SiGithub />
-          Github
+          GitHub
         </Button>
       </a>
       <a href="https://www.linkedin.com/in/nicolasmoraes-ti/" target="_blank">

@@ -28,7 +28,7 @@ export default async function Home() {
       {/* Github repositories */}
       <section className="flex min-h-screen w-full max-w-screen-lg flex-col justify-center max-lg:mx-auto max-lg:px-2">
         <h2 className="mb-4 inline-flex items-center gap-x-2 font-mono text-3xl">
-          <SiGithub size={40} /> Github
+          <SiGithub size={40} /> GitHub
         </h2>
         <div className="flex gap-4 max-md:flex-col">
           {data!.repositories.map((repository) => (
