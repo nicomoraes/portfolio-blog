@@ -109,7 +109,7 @@ export const ContactForm: React.FC<ContactFormProps> = ({ config }) => {
             name="body"
           />
         </fieldset>
-        <div className="flex w-full justify-center gap-x-6">
+        <div className="flex w-full justify-center gap-x-6 mb-4">
           <Button aria-label="Enviar formulário" disabled={isLoading} role="button">
             {isLoading ? <ImSpinner2 className="animate-spin" /> : "Enviar"}
           </Button>
